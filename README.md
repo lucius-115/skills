@@ -1,16 +1,14 @@
-# Claude Code 自定义技能集
+# 路修的Skills
 
-这里收录了一系列用于 [Claude Code](https://claude.ai/code) 的自定义技能，将文件夹放入 `~/.claude/skills/` 即可为 Claude 扩展新能力。
+这里记录了一些我自己写的并在用的skills。
 
-## 什么是 Skills？
-
-Skills 是可以在 Claude Code 中通过 `/技能名` 调用的斜杠命令。每个技能包含一个提示词定义文件（`SKILL.md`）和可选的辅助脚本，Claude 会调用这些脚本来完成任务。
-
-## 技能列表
+## Skills列表
 
 ### [`video-notes`](./video-notes/)
 
 一条命令将本地视频转录并整理为结构化 Markdown 笔记。
+这个skills主要是为了配合我现在正在实践的Karpathy的基于obsidian的LLM笔记体系，我看的很多课程是本地视频特别是还有一些国外的课程，这个skills可以把视频字幕提取出来到文档里让后存入我的笔记给AI消化，并记录到我的知识库。
+在音频处理上最开始用的是Whisper这个项目，但是实际用起来发现处理的太慢了，2个多小时的视频处理了快3个小时还没结束，后面用了字节的ASR API快了很多，而且也不是很贵，可以在火山方舟上去购买并配置，初次使用还会送20个小时。
 
 **功能：**
 - 通过 ffmpeg 提取任意视频格式的音频
